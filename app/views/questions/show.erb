@@ -1,0 +1,6 @@
+<div class ='question'>
+  <%= question.body %>
+  <% question.answers.each do |answer| %>
+    <%= erb :'/answers/show', locals: {answer: answer} %>
+  <% end %>
+</div>
