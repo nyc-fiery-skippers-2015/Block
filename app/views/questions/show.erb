@@ -3,4 +3,5 @@
   <% question.answers.each do |answer| %>
     <%= erb :'/answers/show', locals: {answer: answer} %>
   <% end %>
+  <a href='#' id='<%= question.id %>'>Edit Question</a>
 </div>
