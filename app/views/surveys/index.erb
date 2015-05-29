@@ -1,0 +1,5 @@
+<div class='all_surveys'>
+  <% surveys.each do |survey| %>
+    <%= erb :'surveys/_survey_show', locals: {survey: survey} %>
+  <% end %>
+</div>
