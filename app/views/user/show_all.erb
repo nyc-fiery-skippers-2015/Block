@@ -1,0 +1,14 @@
+<h1>Survey Guerilla</h1>
+<% users.each do |u| %>
+  <table>
+    <tr>
+      <td>Name: <%= u.name %></td>
+      <td>Email: <%= u.email %></td>
+      <td><%= erb :'user/_show', locals: {user: u} %></td>
+    </tr>
+  </table>
+<% end %>
+
+
+
+
