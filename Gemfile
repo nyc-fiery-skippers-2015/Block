@@ -16,6 +16,8 @@ gem 'activerecord', '~>4.1'
 
 gem 'bcrypt'
 
+gem 'rubysl-securerandom'
+
 gem 'rake'
 
 gem 'shotgun'

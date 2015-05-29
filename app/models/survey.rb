@@ -1,7 +1,7 @@
 class Survey < ActiveRecord::Base
 
   belongs_to :creator, class_name: "User"
-  has_many :questions
+  has_many :questions, dependent: :destroy
   has_many :survey_answers
 
 end
