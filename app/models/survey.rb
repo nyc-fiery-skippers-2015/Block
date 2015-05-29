@@ -4,4 +4,8 @@ class Survey < ActiveRecord::Base
   has_many :questions, dependent: :destroy
   has_many :survey_answers
   has_many :answers, through: :questions
+
+
+
+
 end
