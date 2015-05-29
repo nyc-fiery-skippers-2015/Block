@@ -1,7 +1,7 @@
 <div class='survey-show'>
   <div><%=survey.name%></div>
   <% survey.questions.each do |question| %>
-    <% erb :'/questions/show', locals: {question: question} %>
+    <%= erb :'/questions/show', locals: {question: question} %>
   <%end%>
-  <div><a href='#' class='new_question'>Create Question</a></div>
+  <div><a href="/surveys/<%= survey.id%>/questions/new" class='new_question'>Create Question</a></div>
 </div>
