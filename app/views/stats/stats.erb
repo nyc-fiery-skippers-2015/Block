@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+  <div class="col-md-4">
+    <table class="table table-striped">
+     <tr>
+       <th> Questions </th>
+         <% choices.each do |choice|%>
+           <th><%=choice.answer%></th>
+         <%end%>
+      </tr>
+    <% questions.each do |q|%>
+    <tr><td><%=q.body%></td></tr>
+    <%end%>
+    </table>
+   </div>
+ </div>
+</div>
