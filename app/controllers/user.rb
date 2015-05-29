@@ -13,12 +13,10 @@ get '/user/:id' do
   erb :'user/index', locals: { user: current_user }
 end
 
-
 get '/user/:id/edit' do
   require_logged_in
   erb :'user/edit'
 end
-
 
 put '/user/edit' do
   cur_user = User.find_by(id: session[:user_id])
