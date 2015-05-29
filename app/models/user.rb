@@ -5,6 +5,10 @@ class User < ActiveRecord::Base
   has_many :surveys, foreign_key: 'creator_id', dependent: :destroy
   has_many :survey_answers
 
+  validates :name, length: { minimum: 3}
+  validates :password, length: { minimum: 3 }
+  validates :email, presence: true
+
   def password
     @password ||= Password.new(password_hash)
   end
