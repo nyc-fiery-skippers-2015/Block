@@ -1,0 +1,19 @@
+<h1>Survey Monkey!!!!!!!!!!!!!!!!!!</h1>
+
+<form action='/login' method="post">
+  <input type="string" name="username" placeholder="username"/>
+  <input type="password" name="password" placeholder="password" />
+  <input type="submit" value="Log In"/>
+</form>
+
+<% if params[:error] == 'ua' %>
+  <p>Sorry There was a problem logging you in.</p>
+<% end %>
+
+<form action='/create/profile' method='post'>
+  <input type='string' name='user[name]' placeholder="username"/>
+  <input type="password" name="user[password]" placeholder="password" />
+  <input type="password" name="user[password]" placeholder="confirm password" />
+  <input type="password" name="user[email]" placeholder="email" />
+  <input type="submit" value="Sign Up"/>
+</form>
