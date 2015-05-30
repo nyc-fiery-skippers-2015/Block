@@ -1,4 +1,6 @@
-<div><%= survey.name %></div>
-<div><%= survey.url %></div>
-<div><%= survey.creator %></div>
+<div>Title: <a href='/surveys/<%=survey.id%>'><%= survey.name %></a></div>
+<div>Url: <%= survey.url %></div>
+<% if survey.creator %>
+<div>Creator: <%= survey.creator.name %></div>
+<% end %>
 <a href='#'>Stats</a>

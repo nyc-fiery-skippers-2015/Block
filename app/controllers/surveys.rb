@@ -19,8 +19,8 @@ end
 post '/surveys' do
   user_input = params[:survey]
   rand_url = SecureRandom.hex(4)
-  new_survey = Survey.new(name: user_input[:name], creator_id: 1, url: rand_url)
+  new_survey = Survey.new(name: user_input[:name], creator_id: session[:user_id], url: rand_url)
   return [500, "Survey Must Have a Name"] unless new_survey.save
-  redirect '/surveys'
+  redirect "/surveys/#{new_survey.id}"
 end
 
