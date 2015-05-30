@@ -3,12 +3,13 @@
 <div><%= user.email %></div>
 
 <% user.surveys.each do |s| %>
-  <div>URL: <%= s.url %></div>
+  <div>URL: <a href="http://localhost:9393/surveys/<%= s.url %>"><%= s.url %></a></div>
   <div>Survey Title: <%= s.name %></div>
 <% end %>
 
 <% if session[:user_id] == user.id %>
   <div><a href="/user/<%=user.id %>/edit">Click here to Edit your profile</a></div>
   <div><a href="/user/areyousure">Click here to Delete your profile</a></div>
+  <div><a href="/surveys/new">Click here to make a new Survey</a></div>
 <% end %>
 
