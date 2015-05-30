@@ -3,8 +3,8 @@ get '/surveys/:id/questions/new' do
   erb :'/questions/new', locals: {survey: cur_survey}, layout: false
 end
 
-get '/surveys/:id/questions/edit' do
-  cur_question = Question.find_by(survey_id: params[:id])
+get '/surveys/:id/questions/edit/:question_id' do
+  cur_question = Question.find_by(id: params[:question_id])
   erb :"/questions/edit", locals: {survey: cur_question.survey, question: cur_question}, layout: false
 end
 

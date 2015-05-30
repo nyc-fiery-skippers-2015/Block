@@ -47,8 +47,8 @@ var editQuestionForm = function(event){
   event.preventDefault();
   var $target = $(event.target);
   var surveyId = $target.data('surveyId');
-  var controllerRoute = '/surveys/' + surveyId + '/questions/edit';
-  var thisDiv = $target.closest('.question').attr('id');
+  var thisDiv = $target.data('questionId');
+  var controllerRoute = '/surveys/' + surveyId + '/questions/edit/' + thisDiv;
   var controllerMethod = 'get';
 
   $.ajax({
