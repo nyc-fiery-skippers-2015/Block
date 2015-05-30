@@ -1,9 +1,43 @@
 $(document).ready(function() {
   $('.new_question').on('click', questionForm);
   $('.survey-show').on('submit','.new_question_form', addQuestion);
-  $('.edit-question').on('click', editQuestionForm);
+  $('.survey-show').on('click', '.edit-question', editQuestionForm);
   $('.survey-show').on('submit', '.edit_question_form', editQuestion);
+  $('.edit-profile').on('click', editProfile);
+  $('#user-options').on('submit', '.edit-profile', updateProfile);
 });
+
+var editProfile = function(event) {
+  event.preventDefault();
+  var $target = $(event.target);
+  var controllerMethod = 'get';
+  var controllerRoute = $target.attr('href')
+  $.ajax({
+    'url'      :  controllerRoute,
+    'method'   :  'get',
+    'datatype' :  'html'
+  }).done(function(response) {
+    $target.replaceWith(response);
+  }).fail(function(error){
+    alert(error);
+  });
+};
+
+var updateProfile = function(event) {
+  event.preventDefault();
+  var $target = $(event.target);
+  $.ajax({
+    'url'       :  '/user/edit',
+    'method'    :  'put',
+    'datatype'  :  'json'
+  }).done(function(response){
+    $('.edit-user-form').toggle(false);
+    $('.username').text(response.name);
+    $('.email').text(response.email);
+  }).fail(function(error){
+    console.log("you did a bad thing")
+  })
+}
 
 var questionForm = function(event) {
   event.preventDefault();

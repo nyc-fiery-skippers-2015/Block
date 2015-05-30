@@ -1,6 +1,6 @@
 <h1>Survey Guerilla</h1>
-<div><%= user.name %></div>
-<div><%= user.email %></div>
+<div class="username"><%= user.name %></div>
+<div class="email"><%= user.email %></div>
 
 <% user.surveys.each do |s| %>
   <div>URL: <a href="http://localhost:9393/surveys/<%= s.url %>"><%= s.url %></a></div>
@@ -8,8 +8,10 @@
 <% end %>
 
 <% if session[:user_id] == user.id %>
-  <div><a href="/user/<%=user.id %>/edit">Click here to Edit your profile</a></div>
-  <div><a href="/user/areyousure">Click here to Delete your profile</a></div>
-  <div><a href="/surveys/new">Click here to make a new Survey</a></div>
+  <div id="#user-options">
+    <div class="edit-profile"><a href="/user/<%=user.id %>/edit">Click here to Edit your profile</a></div>
+    <div><a href="/user/areyousure">Click here to Delete your profile</a></div>
+    <div><a href="/surveys/new">Click here to make a new Survey</a></div>
+  </div>
 <% end %>
 
