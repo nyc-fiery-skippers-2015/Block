@@ -1,6 +1,6 @@
 <div class='question' id='<%=question.id%>'>
   <%= question.body %>
   <% question.answers.each do |answer| %>
-    <%= erb :'/answers/take_show', locals: {answer: answer} %>
-  <% end %>
+    <div class='answers'><form><input type='radio'/ value='select-answer' name='Answer'/>  <%= erb :'/answers/take_show', locals: {answer: answer} %>
+  <% end %></form></div>
 </div>
