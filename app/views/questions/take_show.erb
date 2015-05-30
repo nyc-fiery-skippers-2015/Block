@@ -1,0 +1,6 @@
+<div class='question' id='<%=question.id%>'>
+  <%= question.body %>
+  <% question.answers.each do |answer| %>
+    <%= erb :'/answers/take_show', locals: {answer: answer} %>
+  <% end %>
+</div>
