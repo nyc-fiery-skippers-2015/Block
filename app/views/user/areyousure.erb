@@ -1,0 +1,12 @@
+<h2>Are you sure you'd like to delete your profile?</h2>
+<div>
+  <form action='/user/delete' method='post'>
+    <input type='hidden' name='_method' value='delete'/>
+    <input type="submit" value="Yes"/>
+  </form>
+</div>
+<div>
+  <form action="/user/<%= session[:user_id] %>">
+    <input type="submit" value="No" />
+  </form>
+</div>

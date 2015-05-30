@@ -1,0 +1,14 @@
+<form action='/user/edit' method='post'>
+  <input type="hidden" name="_method" value="put" />
+  <input type='string' name='user[name]' placeholder="username"/>
+  <input type="email" name="user[email]" placeholder="email" />
+  <input type="submit" value="Edit"/>
+</form>
+
+<% if params[:error] == 'done' %>
+  <p>T<!-- ype in your password to continue</p>
+  <form action='/user'
+    <input type="password" name="user[password]" placeholder="password" />
+    <input type="submit" value="Sign Up"/>
+  </form> -->
+<% end %>
