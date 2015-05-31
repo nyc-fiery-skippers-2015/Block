@@ -36,9 +36,7 @@ put '/user/edit' do
   if request.xhr?
     return cur_user.to_json
   end
-    redirect "/user/#{cur_user.id}"
-    # {username: cur_user.name, email: cur_user.email}.to_json
-
+  redirect "/user/#{cur_user.id}"
 end
 
 delete '/user/delete' do
