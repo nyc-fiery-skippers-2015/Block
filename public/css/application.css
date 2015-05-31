@@ -7,3 +7,22 @@
 th {
   text-align: left;
 }
+
+body {
+
+  background-image: url(background.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #464646;
+}
+
+.nav{
+  background:transparent;
+}
+#caption {
+  color: white;
+  background-color:
+
+}
