@@ -5,6 +5,7 @@
     <% user.surveys.each do |s| %>
       <div>URL: <a href="http://localhost:9393/surveys/<%= s.url %>"><%= s.url %></a></div>
       <div>Survey Title: <%= s.name %></div>
+      <div><a href='/stats/<%=s.id%>'>Stats</a>
     <% end %>
 
   <% if session[:user_id] == user.id %>

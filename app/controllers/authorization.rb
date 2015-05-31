@@ -19,8 +19,8 @@ end
 
 post '/create/profile' do
   new_user = User.new(params[:user])
-  new_user.id = session[:user_id]
   if new_user.save
+    session[:user_id] = new_user.id
     redirect "/user/#{new_user.id}"
   else
     redirect "/?error=internalerror"
