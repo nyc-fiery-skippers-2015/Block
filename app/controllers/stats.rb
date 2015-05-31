@@ -16,7 +16,8 @@ end
 
 def ans_stats (question)
 
- answers = question.answers
+ an= question.answers
+
  a = (answers[0].answer) + ((find_count((answers[0].id))).to_s )
  b = (answers[1].answer) + ((find_count((answers[1].id))).to_s )
  c = (answers[2].answer) +((find_count((answers[2].id))).to_s )
