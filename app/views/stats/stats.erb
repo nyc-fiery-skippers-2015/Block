@@ -1,17 +1,17 @@
 <div class="container">
   <div class="row">
-  <div class="col-md-4">
+  <div class="col-md-5">
     <table class="table table-striped">
-
-       <h3> Questions </h3>
-
-       <h5> Number of Survey responders: <%=submits%><h5>
-       </tr>
-    <% stats.each do |s|%>
-    <tr><td><%=s[0]%></td></tr>
-    <tr><td><%= s.each_with_index{|ans, i| ans }%> </td>
-    <%end%>
-    </table>
-   </div>
- </div>
+    <h3> Questions </h3>
+    <h5> Number of Survey responders: <%=submits%><h5>
+    </tr>
+      <% stats.each do |s|%>
+        <h3><%=s[0]%></h3>
+          <%s.each_with_index do |ans , i|%>
+            <p><%= ans unless i ==0 %> </p>
+          <%end%>
+        <%end%>
+      </table>
+    </div>
+  </div>
 </div>

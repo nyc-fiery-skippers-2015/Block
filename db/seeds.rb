@@ -21,4 +21,8 @@ Answer.create(answer:"testans2",question_id:3)
 Answer.create(answer:"testans3",question_id:3)
 
 
-20.times{|x| SurveyAnswer.create(user_id:x,survey_id:1,answer_id:(rand(1..4)))}
+20.times do |x|
+  SurveyAnswer.create(user_id: x,survey_id:1,answer_id:(rand(1..4)))
+  SurveyAnswer.create(user_id: x,survey_id:1,answer_id:(rand(5..8)))
+  SurveyAnswer.create(user_id: x,survey_id:1,answer_id:(rand(9..12)))
+ end
