@@ -42,7 +42,9 @@ body {
 }
 #caption {
   color: white;
-  background-color:
+  background: rgb(170, 187, 97); /* Fallback */
+  background: rgba(170, 187, 97, 0.5);
+
 
 }
 
