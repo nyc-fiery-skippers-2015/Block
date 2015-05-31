@@ -19,7 +19,6 @@ gem 'bcrypt'
 gem 'rubysl-securerandom'
 
 gem 'rake'
-gem 'pry'
 
 gem 'shotgun'
 
