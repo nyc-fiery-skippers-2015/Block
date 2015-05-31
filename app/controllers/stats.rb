@@ -16,10 +16,10 @@ end
 def ans_stats (question,submits)
   answers= question.answers
   submits = submits.to_f
- a = "#{answers[0].answer} : #{((find_count((answers[0].id)))/submits)*100}%"
- b = "#{answers[1].answer} : #{((find_count((answers[1].id)))/submits)*100}%"
- c = "#{answers[2].answer} : #{((find_count((answers[2].id)))/submits)*100}%"
- d =  "#{answers[3].answer} : #{((find_count((answers[3].id)))/submits)*100}%"
+ a = ["#{answers[0].answer}", ((find_count((answers[0].id)))/submits)*100]
+ b = ["#{answers[1].answer}", ((find_count((answers[1].id)))/submits)*100]
+ c = ["#{answers[2].answer}", ((find_count((answers[2].id)))/submits)*100]
+ d =  ["#{answers[3].answer}", ((find_count((answers[3].id)))/submits)*100]
   ans_stats = [a,b,c,d]
 end
 
