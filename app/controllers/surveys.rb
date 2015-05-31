@@ -32,6 +32,6 @@ end
 post '/surveys/submit' do
   cur_survey = Answer.find_by(id: params.first[1]).question.survey.id
   params.each {|k,v| SurveyAnswer.create(answer_id: v, user_id: session[:user_id], survey_id: cur_survey)}
-  redirect '/surveys'
+  redirect "/stats/#{cur_survey}"
 end
 
