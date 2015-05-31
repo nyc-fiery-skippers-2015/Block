@@ -15,6 +15,7 @@ gem 'activesupport', '~>4.1'
 gem 'activerecord', '~>4.1'
 gem 'pry'
 gem 'bcrypt'
+gem 'chartkick'
 
 gem 'rubysl-securerandom'
 

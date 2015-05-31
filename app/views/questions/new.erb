@@ -1,10 +1,10 @@
 <div class='question-form'>
 <form class='new_question_form' action='/surveys/<%= survey[:id] %>/questions' method='post'>
   <input type='text' name='question[body]' placeholder='Question'/>
-  <input type='text' name='answer[answer1]' placeholder='Answer'/>
-  <input type='text' name='answer[answer2]' placeholder='Answer'/>
-  <input type='text' name='answer[answer3]' placeholder='Answer'/>
-  <input type='text' name='answer[answer4]' placeholder='Answer'/>
+  <input pattern=".{1,}" required title="1 character minimum" type='text' name='answer[answer1]' placeholder='Answer'/>
+  <input pattern=".{1,}" required title="1 character minimum" type='text' name='answer[answer2]' placeholder='Answer'/>
+  <input pattern=".{1,}" required title="1 character minimum" type='text' name='answer[answer3]' placeholder='Answer'/>
+  <input pattern=".{1,}" required title="1 character minimum" type='text' name='answer[answer4]' placeholder='Answer'/>
   <input type='submit' value='Submit'/>
 </form>
 </div>
