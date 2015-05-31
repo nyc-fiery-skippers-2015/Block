@@ -18,6 +18,10 @@ th {
   margin-bottom: 10px;
 }
 
+.submit {
+  display: none;
+}
+
 .answers input {
   margin-left: 5px;
 }

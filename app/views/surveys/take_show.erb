@@ -1,9 +1,14 @@
 <div class='survey-show'>
     <div><%=survey.name%></div>
   <div class='survey-questions'>
+    <div class='answers'>
+  <form class='answers' action='/surveys/submit' method='post'>
     <div class='question'><% survey.questions.each do |question| %>
       <%= erb :'/questions/take_show', locals: {question: question} %>
     <%end%>
   </div>
   </div>
+    <input type='submit' value='Submit'/>
+  </form>
+</div>
 </div>

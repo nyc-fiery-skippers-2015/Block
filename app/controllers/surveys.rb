@@ -1,3 +1,4 @@
+require 'pry'
 get '/surveys' do
   all_surveys = Survey.all
   erb :'surveys/index', locals: {surveys: all_surveys}
@@ -22,5 +23,11 @@ post '/surveys' do
   new_survey = Survey.new(name: user_input[:name], creator_id: session[:user_id], url: rand_url)
   return [500, "Survey Must Have a Name"] unless new_survey.save
   redirect "/surveys/#{new_survey.id}"
+end
+
+post '/surveys/submit' do
+  cur_survey = Answer.find_by(id: params.first[1]).question.survey.id
+  params.each {|k,v| SurveyAnswer.create(answer_id: v, user_id: session[:user_id], survey_id: cur_survey)}
+  redirect '/surveys'
 end
 
