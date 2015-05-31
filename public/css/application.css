@@ -8,6 +8,7 @@ th {
   text-align: left;
 }
 
+
 .survey-questions {
   margin-left: 20px;
   margin-top: 10px;
@@ -25,3 +26,23 @@ th {
 .answers input {
   margin-left: 5px;
 }
+
+body {
+
+  background-image: url(background.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #464646;
+}
+
+.nav{
+  background:transparent;
+}
+#caption {
+  color: white;
+  background-color:
+
+}
+
