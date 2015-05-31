@@ -20,7 +20,8 @@ def ans_stats (question)
  a = (answers[0].answer) + ((find_count((answers[0].id))).to_s )
  b = (answers[1].answer) + ((find_count((answers[1].id))).to_s )
  c = (answers[2].answer) +((find_count((answers[2].id))).to_s )
-  d = (answers[3].answer) +((find_count((answers[3].id))).to_s )
+d = (answers[3].answer) +((find_count((answers[3].id))).to_s )
+
  ans_stats = [a,b,c,d]
 end
 
