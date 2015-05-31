@@ -1,3 +1,5 @@
+require 'pry'
+
 get '/users' do
   require_logged_in
   all_users = User.all
@@ -20,14 +22,21 @@ end
 
 get '/user/:id/edit' do
   require_logged_in
-  erb :'user/edit'
+  if request.xhr?
+    erb :'user/edit', layout: false
+  else
+    erb :'user/edit'
+  end
 end
 
 put '/user/edit' do
   cur_user = User.find_by(id: session[:user_id])
   cur_user.update(params[:user])
   return [500, "Invalid Entry"] unless cur_user.save
-  redirect "/user/#{current_user.id}"
+  if request.xhr?
+    return cur_user.to_json
+  end
+  redirect "/user/#{cur_user.id}"
 end
 
 delete '/user/delete' do
