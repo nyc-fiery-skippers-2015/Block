@@ -1,5 +1,7 @@
-<div class='all_surveys'>
-  <% surveys.each do |survey| %>
-    <%= erb :'surveys/_survey_show', locals: {survey: survey} %>
-  <% end %>
+<div class="row">
+  <div class ="col-md-6 col-md-offset-4">
+    <% surveys.each do |survey| %>
+      <%= erb :'surveys/_survey_show', locals: {survey: survey} %>
+    <% end %>
+  </div>
 </div>
