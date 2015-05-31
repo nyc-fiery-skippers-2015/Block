@@ -8,8 +8,14 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
   <script src="/js/application.js"></script>
   <script src="/js/script.js"></script>
+<div class="container-fluid">
 <link rel="stylesheet" href="/css/styles.css">
   <title></title>
+  <div class="row">
+
+
+
+  </div>
 </head>
 <body>
   <% if session[:user_id] %>
@@ -29,4 +35,6 @@
 <% end %>
   <%= yield %>
 </body>
+</div>
+
 </html>

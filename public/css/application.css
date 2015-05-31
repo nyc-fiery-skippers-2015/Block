@@ -29,3 +29,42 @@ body {
 .answers input {
   margin-left: 5px;
 }
+
+#background {
+
+
+
+  background-image: url(background.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #464646;
+}
+
+
+
+ #userinput::-webkit-input-placeholder {
+   color: white;
+}
+#userinput{
+ background: transparent;
+ border:2px solid;
+ border-color: #D8D8D8 ;
+color:white;
+}
+#signup{
+   padding-top: 5px;
+}
+
+
+.nav{
+  background:transparent;
+}
+#caption {
+  color: white;
+  background: rgb(170, 187, 97); /* Fallback */
+  background: rgba(170, 187, 97, 0.5);
+
+
+}

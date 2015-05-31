@@ -1,17 +1,18 @@
 <div class="container">
   <div class="row">
-  <div class="col-md-4">
+  <div class="col-md-5">
     <table class="table table-striped">
-     <tr>
-       <th> Questions </th>
-         <% choices.each do |choice|%>
-           <th><%=choice.answer%></th>
-         <%end%>
-      </tr>
-    <% questions.each do |q|%>
-    <tr><td><%=q.body%></td></tr>
-    <%end%>
-    </table>
-   </div>
- </div>
+
+    <h3> Questions </h3>
+    <h5> Number of Survey responders: <%=submits%><h5>
+    </tr>
+      <% stats.each do |s|%>
+        <h3><%=s[0]%></h3>
+          <%s.each_with_index do |ans , i|%>
+            <p><%= ans unless i ==0 %> </p>
+          <%end%>
+        <%end%>
+      </table>
+    </div>
+  </div>
 </div>

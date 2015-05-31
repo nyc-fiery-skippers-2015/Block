@@ -1,23 +1,36 @@
-<h1>Survey Monkey!!!!!!!!!!!!!!!!!!</h1>
-
-<form action='/login' method="post">
-  <input type="string" min="12" name="username" placeholder="username"/>
-  <input type="password" name="password" placeholder="password" />
-  <input type="submit" value="Log In"/>
-</form>
+<body id ="background" >
+<div class = "row">
+  <div class ="col-md-5 col-md-offset-6" >
+  <form action='/login' method="post"  >
+    <input id= "userinput"type="string"  name="username" placeholder="username"/>
+    <input id= "userinput" type="password" name="password" placeholder="password" />
+    <input  type="submit" value="Log In"/>
+  </form>
+  <div class = "row">
+    <div class ="col-md-10 " id= "signup" >
+      <form action='/create/profile' method='post'>
+        <input id= "userinput" type='string' name='user[name]' placeholder="username"/>
+        <input id= "userinput" type="password" name="user[password]" placeholder="password" />
+        <input id= "userinput" type="password" name="user[password]" placeholder="confirm password" />
+        <input id= "userinput" type="email" name="user[email]" placeholder="email" />
+        <input id= "userinput"  type="submit" value="Sign Up"/>
+      </form>
+   </div>
+  </div>
+ </div>
+ <div class = "row" >
+   <div class = "col-md-5 col-md-offset-3" >
+    <h1 class ="text-center"  id = "caption"> Survey Express </h1>
+    <h3 Class ="text-center" id = "caption"> For The Answers You Need Now"</h3>
+</div>
+</div>
 
 <% if params[:error] == 'ua' %>
   <p>Sorry There was a problem logging you in.</p>
 <% end %>
 
-<form action='/create/profile' method='post'>
-  <input type='string' name='user[name]' placeholder="username"/>
-  <input type="password" name="user[password]" placeholder="password" />
-  <input type="password" name="user[password]" placeholder="confirm password" />
-  <input type="email" name="user[email]" placeholder="email" />
-  <input type="submit" value="Sign Up"/>
-</form>
-
 <% if params[:error] == 'internalerror' %>
   <p>There was a problem saving your profile, try again.</p>
 <% end %>
+</body>
+
