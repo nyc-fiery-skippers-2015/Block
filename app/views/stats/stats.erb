@@ -4,13 +4,11 @@
     <table class="table table-striped">
 
        <h3> Questions </h3>
-       <h4>
-         <% choices.each do |choice|%>
-           <th><%=choice.answer%></th>
-         <%end%>
-      </tr>
-    <% questions.each do |q|%>
-    <tr><td><%=q.body%></td></tr>
+       <h5> Number of Survey responders: <%=submits%><h5>
+       </tr>
+    <% stats.each do |s|%>
+    <tr><td><%=s[0]%></td></tr>
+    <tr><td><%= s.each_with_index{|ans, i| ans }%> </td>
     <%end%>
     </table>
    </div>
