@@ -9,6 +9,7 @@ th {
 }
 
 
+
 .survey-questions {
   margin-left: 20px;
   margin-top: 10px;
@@ -29,6 +30,9 @@ th {
 
 #background {
 
+body {
+
+
   background-image: url(background.jpg);
   background-position: center center;
   background-repeat: no-repeat;
@@ -36,6 +40,7 @@ th {
   background-size: cover;
   background-color: #464646;
 }
+
 
 
  #userinput::-webkit-input-placeholder {
@@ -51,6 +56,7 @@ color:white;
    padding-top: 5px;
 }
 
+
 .nav{
   background:transparent;
 }
@@ -61,4 +67,3 @@ color:white;
 
 
 }
-
