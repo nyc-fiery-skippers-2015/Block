@@ -8,8 +8,8 @@
 <% end %>
 
 <% if session[:user_id] == user.id %>
-  <div id="#user-options">
-    <div class="edit-profile"><a href="/user/<%=user.id %>/edit">Click here to Edit your profile</a></div>
+  <div id="user-options">
+    <div ><a class="edit-profile" href="/user/<%=user.id %>/edit">Click here to Edit your profile</a></div>
     <div><a href="/user/areyousure">Click here to Delete your profile</a></div>
     <div><a href="/surveys/new">Click here to make a new Survey</a></div>
   </div>

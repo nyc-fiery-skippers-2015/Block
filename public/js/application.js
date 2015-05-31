@@ -4,7 +4,7 @@ $(document).ready(function() {
   $('.survey-show').on('click', '.edit-question', editQuestionForm);
   $('.survey-show').on('submit', '.edit_question_form', editQuestion);
   $('.edit-profile').on('click', editProfile);
-  $('#user-options').on('submit', '.edit-profile', updateProfile);
+  $('#user-options').on('submit', '.edit-user-form', updateProfile);
 });
 
 var editProfile = function(event) {
@@ -17,7 +17,7 @@ var editProfile = function(event) {
     'method'   :  'get',
     'datatype' :  'html'
   }).done(function(response) {
-    $target.replaceWith(response);
+    $target.replaceWith(response)
   }).fail(function(error){
     alert(error);
   });
@@ -26,14 +26,18 @@ var editProfile = function(event) {
 var updateProfile = function(event) {
   event.preventDefault();
   var $target = $(event.target);
+  var data = $target.serialize()
   $.ajax({
     'url'       :  '/user/edit',
     'method'    :  'put',
+    'data'      :   data,
     'datatype'  :  'json'
   }).done(function(response){
-    $('.edit-user-form').toggle(false);
-    $('.username').text(response.name);
-    $('.email').text(response.email);
+    // debugger;
+    alert("work~!")
+    $('.edit-user-form').toggle(false)
+    $('.username').text(response.username)
+    $('.email').text(response.email)
   }).fail(function(error){
     console.log("you did a bad thing")
   })
