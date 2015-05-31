@@ -2,10 +2,10 @@
   <div class="profile-details">
     <div class="username"><%= user.name %></div>
     <div class="email"><%= user.email %></div>
-  <% user.surveys.each do |s| %>
-    <div>URL: <a href="http://localhost:9393/surveys/<%= s.url %>"><%= s.url %></a></div>
-    <div>Survey Title: <%= s.name %></div>
-  <% end %>
+    <% user.surveys.each do |s| %>
+      <div>URL: <a href="http://localhost:9393/surveys/<%= s.url %>"><%= s.url %></a></div>
+      <div>Survey Title: <%= s.name %></div>
+    <% end %>
 
   <% if session[:user_id] == user.id %>
     <div id="user-options">

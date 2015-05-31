@@ -26,18 +26,17 @@ var editProfile = function(event) {
 var updateProfile = function(event) {
   event.preventDefault();
   var $target = $(event.target);
-  var data = $target.serialize()
+  var data = $target.serialize();
+  var parentDiv = $target.closest(".profile-details");
   $.ajax({
     'url'       :  '/user/edit',
     'method'    :  'put',
     'data'      :   data,
-    'datatype'  :  'json'
+    'dataType'  :  'json'
   }).done(function(response){
-    // debugger;
-    alert(response)
     $('.edit-user-form').toggle(false)
-    $('.username').html(response["name"])
-    $('.email').html(response["email"])
+    parentDiv.children('.username').html(response.name)
+    parentDiv.children('.email').html(response.email)
   }).fail(function(error){
     console.log("you did a bad thing")
   })
