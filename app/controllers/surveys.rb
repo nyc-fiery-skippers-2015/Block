@@ -1,18 +1,22 @@
 require 'pry'
 get '/surveys' do
+  require_logged_in
   all_surveys = Survey.all
   erb :'surveys/index', locals: {surveys: all_surveys}
 end
 
 get '/surveys/new' do
+  require_logged_in
   erb :'/surveys/new'
 end
 
 get '/surveys/:id' do
+  require_logged_in
   cur_survey = Survey.find_by(id: params[:id])
   if !cur_survey
     cur_survey = Survey.find_by(url: params[:id])
   end
+  return [500, "Unauthorized Access"] unless cur_survey.creator_id == session[:user_id]
   return [500, "No Survey Found"] unless cur_survey
   erb :'surveys/show', locals: {survey: cur_survey}
 end

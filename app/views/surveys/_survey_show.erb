@@ -1,4 +1,4 @@
-<div>Title: <a href='/surveys/<%=survey.id%>'><%= survey.name %></a></div>
+<div>Title: <a href='/user/<%= survey.creator.id %>/surveys/<%=survey.url%>'><%= survey.name %></a></div>
 <div>Url: <%= survey.url %></div>
 <% if survey.creator %>
 <div>Creator: <%= survey.creator.name %></div>
