@@ -1,0 +1,8 @@
+<div id='<%=question.id%>'>
+  <%= question.body %>
+  <fieldset id='question<%=question.id%>'>
+    <% question.answers.each do |answer| %>
+      <input type='radio' value='<%=answer.id%>' name='Answer<%=question.id%>'/> <%=answer.answer %>
+    <% end %>
+  </fieldset>
+</div>

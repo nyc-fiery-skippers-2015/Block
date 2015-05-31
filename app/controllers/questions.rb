@@ -16,7 +16,9 @@ end
 
 post '/surveys/:id/questions' do
   new_question = Question.new(body: params[:question][:body], survey_id: params[:id])
+  user_input = params[:answer]
   return [500, "Invalid Question"] unless new_question.save
+  user_input.each {|k, v| Answer.create(answer: v, question_id: new_question.id)}
   erb :'/questions/show', locals: {question: new_question}, layout: false
 end
 

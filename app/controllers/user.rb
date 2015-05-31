@@ -13,6 +13,11 @@ get '/user/:id' do
   erb :'user/index', locals: { user: current_user }
 end
 
+get '/user/:id/surveys/:url' do
+  cur_survey = Survey.find_by(url: params[:url])
+  erb :'/surveys/take_show', locals: {survey: cur_survey}
+end
+
 get '/user/:id/edit' do
   require_logged_in
   erb :'user/edit'
