@@ -1,7 +1,7 @@
 <h1>Survey Guerilla</h1>
-<div class="username"><%= user.name %></div>
-<div class="email"><%= user.email %></div>
-
+<div class="profile-details">
+  <div class="username"><%= user.name %></div>
+  <div class="email"><%= user.email %></div>
 <% user.surveys.each do |s| %>
   <div>URL: <a href="http://localhost:9393/surveys/<%= s.url %>"><%= s.url %></a></div>
   <div>Survey Title: <%= s.name %></div>
@@ -14,4 +14,5 @@
     <div><a href="/surveys/new">Click here to make a new Survey</a></div>
   </div>
 <% end %>
+</div>
 

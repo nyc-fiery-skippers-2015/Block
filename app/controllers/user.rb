@@ -33,7 +33,12 @@ put '/user/edit' do
   cur_user = User.find_by(id: session[:user_id])
   cur_user.update(params[:user])
   return [500, "Invalid Entry"] unless cur_user.save
-  {username: cur_user.name, email: cur_user.email}.to_json
+  if request.xhr?
+    return cur_user.to_json
+  end
+    redirect "/user/#{cur_user.id}"
+    # {username: cur_user.name, email: cur_user.email}.to_json
+
 end
 
 delete '/user/delete' do

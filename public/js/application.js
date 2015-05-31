@@ -4,7 +4,7 @@ $(document).ready(function() {
   $('.survey-show').on('click', '.edit-question', editQuestionForm);
   $('.survey-show').on('submit', '.edit_question_form', editQuestion);
   $('.edit-profile').on('click', editProfile);
-  $('#user-options').on('submit', '.edit-user-form', updateProfile);
+  $('.profile-details').on('submit', '.edit-user-form', updateProfile);
 });
 
 var editProfile = function(event) {
@@ -34,10 +34,10 @@ var updateProfile = function(event) {
     'datatype'  :  'json'
   }).done(function(response){
     // debugger;
-    alert("work~!")
+    alert(response)
     $('.edit-user-form').toggle(false)
-    $('.username').text(response.username)
-    $('.email').text(response.email)
+    $('.username').html(response["name"])
+    $('.email').html(response["email"])
   }).fail(function(error){
     console.log("you did a bad thing")
   })
