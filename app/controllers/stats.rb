@@ -1,4 +1,3 @@
-require 'pry'
 get '/stats/:id' do
  current_survey = Survey.find_by(id:params[:id])
  questions = current_survey.questions
