@@ -5,11 +5,12 @@
     <div class="username"><%= user.name %></div>
     <div class="email"><%= user.email %></div>
     <% user.surveys.each do |s| %>
+    <div class='border'>
       <div>URL: <a href="http://localhost:9393/surveys/<%= s.url %>"><%= s.url %></a></div>
       <div>Survey Title: <%= s.name %></div>
-      <div><a href='/stats/<%=s.id%>'>Stats</a>
+      <div><a href='/stats/<%=s.id%>'>Stats</a></div>
+    </div>
     <% end %>
-
   <% if session[:user_id] == user.id %>
     <div id="user-options">
       <div ><a class="edit-profile" href="/user/<%=user.id %>/edit">Click here to Edit your profile</a></div>

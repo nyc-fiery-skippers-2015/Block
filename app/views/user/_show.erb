@@ -1,3 +1,3 @@
 <% user.surveys.each do |s| %>
-  <div>URL: <%= s.url %></div>
+  <div>URL:<a href='/user/<%=s.creator.id%>/surveys/<%= s.url %>'><%= s.url %></a></div>
 <% end %>
