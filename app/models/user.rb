@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 
   validates :name, length: { minimum: 3}
   validates :password, length: { minimum: 3 }
-  validates :email, presence: true
+  validates :email, presence: true, uniqueness: true # Whatever you are using as the unique key needs to be validated as unique when creating objects!
 
   def password
     @password ||= Password.new(password_hash)

@@ -1,37 +1,16 @@
 User.create(name:"Don", email:"dhh@gmail.com", password:"12345")
 User.create(name:"Antonio", email:"bh@gmail.com", password:"12345")
-Survey.create(name:"Movies",creator_id:1,url:"tyFYTFDtf" )
 Survey.create(name:"Presidents",creator_id:2,url:"graeAgaerHA" )
 
-Question.create(body:"Dumb and Dumber",survey_id:1 )
-Answer.create(answer:"1 star",question_id:1)
-Answer.create(answer:"2 stars",question_id:1)
-Answer.create(answer:"3 stars",question_id:1)
-Answer.create(answer:"4 stars",question_id:1)
+# Seed files should be refactored appropriately like other code.
+Survey.create(name:"Movies",creator_id:1, url:"tyFYTFDtf" ).tap do |survey|
+  ['Dumb and Dumber', 'Scarface', 'Fight Club', 'The Big Lebowski'].each do |movie|
+    survey.questions.create(body: movie).tap do |q|
+      5.times { |i|  q.answers.create(answer: "#{i} star") }
+    end
+  end
+end
 
-Question.create(body:"Scarface",survey_id:1 )
-Answer.create(answer:"1 star",question_id:2)
-Answer.create(answer:"2 stars",question_id:2)
-Answer.create(answer:"3 stars",question_id:2)
-Answer.create(answer:"4 stars",question_id:2)
-
-Question.create(body:"Fight Club",survey_id:1 )
-Answer.create(answer:"1 star",question_id:3)
-Answer.create(answer:"2 stars",question_id:3)
-Answer.create(answer:"3 stars",question_id:3)
-Answer.create(answer:"4 stars",question_id:3)
-
-Question.create(body:"The Godfather",survey_id:1 )
-Answer.create(answer:"1 star",question_id:4)
-Answer.create(answer:"2 stars",question_id:4)
-Answer.create(answer:"3 stars",question_id:4)
-Answer.create(answer:"4 stars",question_id:4)
-
-Question.create(body:"The Big Lebowski",survey_id:1 )
-Answer.create(answer:"1 star",question_id:5)
-Answer.create(answer:"2 stars",question_id:5)
-Answer.create(answer:"3 stars",question_id:5)
-Answer.create(answer:"4 stars",question_id:5)
 
 Question.create(body:"George Washington",survey_id:2 )
 Answer.create(answer:"1 star",question_id:6)

@@ -1,0 +1,15 @@
+<% if session[:user_id] %>
+  <div class='row'>
+    <div class='col-md-5 col-md-offset-3'>
+      <div id='cssmenu'>
+        <ul>
+         <li id= "nav_bar"class='active'><a href='/user/<%= session[:user_id]%>'>Home</a></li>
+         <li><a href='/surveys/new'>New Survey</a></li>
+         <li><a href='/surveys'>Surveys</a></li>
+         <li><a href='/users'>Users</a></li>
+         <li><a href='/logout'>Logout</a>
+        </ul>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -22,11 +22,7 @@ end
 
 get '/user/:id/edit' do
   require_logged_in
-  if request.xhr?
-    erb :'user/edit', layout: false
-  else
-    erb :'user/edit'
-  end
+  erb :'user/edit', layout: !request.xhr? #Leaner and Cleaner!
 end
 
 put '/user/edit' do

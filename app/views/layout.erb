@@ -9,32 +9,15 @@
   <script src="/js/application.js"></script>
   <script src="/js/script.js"></script>
   <script src="//www.google.com/jsapi"></script>
-  <script src="/js/chartkick.js"></script>
+
+  <!-- Try to source your libraries remotely wherever possible -->
+  <script src="https://raw.githubusercontent.com/ankane/chartkick.js/master/chartkick.js"></script>
 <div class="container-fluid">
 <link rel="stylesheet" href="/css/styles.css">
   <title></title>
-  <div class="row">
-
-
-
-  </div>
 </head>
 <body>
-  <% if session[:user_id] %>
-    <div class='row'>
-      <div class='col-md-5 col-md-offset-3'>
-        <div id='cssmenu'>
-        <ul >
-           <li id= "nav_bar"class='active'><a href='/user/<%= session[:user_id]%>'>Home</a></li>
-           <li><a href='/surveys/new'>New Survey</a></li>
-           <li><a href='/surveys'>Surveys</a></li>
-           <li><a href='/users'>Users</a></li>
-           <li><a href='/logout'>Logout</a>
-        </ul>
-      </div>
-    </div>
-  </div>
-<% end %>
+  <%= erb :header %>
   <%= yield %>
 </body>
 </div>

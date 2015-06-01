@@ -3,11 +3,14 @@ get '/surveys/:id/questions/new' do
   erb :'/questions/new', locals: {survey: cur_survey}, layout: false
 end
 
+# Dont nest your routes too deeply.  Only nest if necessary.
+# Survey.id is not used in this method
 get '/surveys/:id/questions/edit/:question_id' do
   cur_question = Question.find_by(id: params[:question_id])
   erb :"/questions/edit", locals: {survey: cur_question.survey, question: cur_question}, layout: false
 end
 
+# Survey.id is not used in this method
 put '/surveys/:id/questions/:question_id' do
   cur_question = Question.find_by(id: params[:question_id])
   cur_question.update(params[:question])
@@ -22,6 +25,7 @@ post '/surveys/:id/questions' do
   erb :'/questions/show', locals: {question: new_question}, layout: false
 end
 
+# Survey.id is not used in this method
 delete 'surveys/:id/questions/:question_id' do
   cur_question = Question.find_by(id: params[:question_id])
   if cur_question

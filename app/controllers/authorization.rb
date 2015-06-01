@@ -1,3 +1,4 @@
+# I dont think I would have my root route point to the login ERB... kinda weird
 get '/' do
   erb :'auth/login'
 end

@@ -5,7 +5,7 @@ class Survey < ActiveRecord::Base
   has_many :survey_answers
   has_many :answers, through: :questions
 
-
-
-
+  def submissions_count
+    survey_answers.count / questions.count
+  end
 end

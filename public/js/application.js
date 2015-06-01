@@ -10,12 +10,9 @@ $(document).ready(function() {
 var editProfile = function(event) {
   event.preventDefault();
   var $target = $(event.target);
-  var controllerMethod = 'get';
-  var controllerRoute = $target.attr('href')
-  $.ajax({
-    'url'      :  controllerRoute,
-    'method'   :  'get',
-    'datatype' :  'html'
+  $.get({
+    'url'      :  $target.attr('href'),
+    'dataType' :  'html'
   }).done(function(response) {
     $target.replaceWith(response)
   }).fail(function(error){
@@ -50,9 +47,8 @@ var questionForm = function(event) {
   var controllerRoute = '/surveys/' + surveyId + '/questions/new'
 
   $.ajax({
-    'url': controllerRoute,
-    'method': controllerMethod,
-    'datatype': 'html'
+    url: controllerRoute,
+    method: controllerMethod
   }).done(function(response) {
     $('.survey-show').append(response)
   }).fail(function(error){
