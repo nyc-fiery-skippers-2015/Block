@@ -1,7 +1,7 @@
-
-<h1 >Title: <a href='/user/<%= survey.creator.id %>/surveys/<%=survey.url%>'><%= survey.name %></a></h1>
-<h2 >Url: <%= survey.url %></h2>
-<% if survey.creator %>
-<h2 >Creator: <%= survey.creator.name %></h2>
-<% end %>
-<h3  href='#'>Stats</h3>
+<div class='border'>
+  <h1 >Title: <a href='/user/<%= survey.creator.id %>/surveys/<%=survey.url%>'><%= survey.name %></a></h1>
+  <h2 >Url: <%= survey.url %></h2>
+  <% if survey.creator %>
+  <h2 >Creator: <%= survey.creator.name %></h2>
+  <% end %>
+</div>
