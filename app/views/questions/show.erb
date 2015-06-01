@@ -1,7 +1,9 @@
+<div class='border'>
 <div class='question' id='<%=question.id%>'>
   <%= question.body %>
   <% question.answers.each do |answer| %>
     <%= erb :'/answers/show', locals: {answer: answer} %>
   <% end %>
   <a href='#' class='edit-question' data-question-id='<%=question.id%>' data-survey-id='<%= question.survey.id %>'>Edit Question</a>
+</div>
 </div>

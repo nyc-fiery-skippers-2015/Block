@@ -2,9 +2,7 @@
   <div class='survey-questions'>
     <h3><%=survey.name%></h3>
     <% survey.questions.each do |question| %>
-    <div class='border'>
       <%= erb :'/questions/show', locals: {question: question} %>
-    </div>
     <%end%>
   </div>
   <div><a href="#" class='new_question' id='<%=survey.id%>'>Create Question</a></div>
