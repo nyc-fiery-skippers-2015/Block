@@ -1,2 +1,8 @@
-#This is group Block's clone of the site Survey Monkey
-======================================================
+#This is a clone of Survey Monkey
+==================================
+
+##Contributors:
+###Marco Cardacci
+###Antonio Manatea
+###Don Holness
+
